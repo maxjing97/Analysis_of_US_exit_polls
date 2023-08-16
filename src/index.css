@@ -1,13 +1,90 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  background-color:rgb(255, 255, 255);
+  margin: 0 auto;
+  z-index: -1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  background-color: #b31942;
+  height: 100px;
+  margin-top: 0;
+  padding: 10px 0px; /*Padding is used to create space around an element's content, inside of any defined borders.*/
+  text-align: center;
 }
+
+nav {
+  display: flex;
+  flex-direction: row; 
+  margin: 0px 0px;
+  padding: 0px 0px;
+  background-color: rgb(26, 10, 252);
+  color : antiquewhite;
+  z-index: 1;
+}
+
+nav a {
+  text-decoration: none;
+  color:antiquewhite
+}
+
+/*centering*/
+nav #about {
+  margin:auto 0;
+  padding: 16px 0px;
+}
+
+/* Change the background color of the menu buttons when the dropdown content is shown */
+nav div:hover {background-color: rgb(161, 156, 239)}
+
+
+
+/* class for all dropdown buttons*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Button wrapping links */
+.dropbtn {
+  background-color: rgb(26, 10, 252);
+  color: antiquewhite;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  max-width:100%;
+  max-height:100%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(161, 156, 239);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: float;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #5f5656;
+  z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column; 
+
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: rgb(161, 156, 239)}
