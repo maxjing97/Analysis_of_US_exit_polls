@@ -29,11 +29,6 @@ nav a {
   color:antiquewhite
 }
 
-/*centering*/
-nav #about {
-  margin:auto 0;
-  padding: 16px 0px;
-}
 
 /* Change the background color of the menu buttons when the dropdown content is shown */
 nav div:hover {background-color: rgb(161, 156, 239)}
@@ -41,16 +36,19 @@ nav div:hover {background-color: rgb(161, 156, 239)}
 
 
 /* class for all dropdown buttons*/
-.dropdown {
+div.dropdown {
   position: relative;
   display: inline-block;
+  padding: 16px 0px;
+  min-width: 184px;
+  margin: 0px;
+  border: 0px;
 }
 
 /* Dropdown Button wrapping links */
-.dropbtn {
+button.dropbtn {
   background-color: rgb(26, 10, 252);
   color: antiquewhite;
-  padding: 16px;
   font-size: 16px;
   border: none;
   max-width:100%;
@@ -83,7 +81,7 @@ nav div:hover {background-color: rgb(161, 156, 239)}
 .dropdown:hover .dropdown-content {
   display: flex;
   flex-direction: column; 
-
+  min-width: 184px;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
