@@ -25,10 +25,11 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./../src/index.css">
     <title>US Elections and Exit polls</title>
   </head>
   <body>
+    <script src="../src/index.js"></script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
@@ -41,27 +42,26 @@
         <div class="dropdown">
           <button class="dropbtn">Congressional Elections</button>
           <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a id="2016_con">2016 House</a>
+            <a id="2018_con">2018 House</a>
+            <a id="2020_con">2020 House</a>
+            <a id="2022_con">2022 House</a>
           </div>
         </div>
         
         <div class="dropdown">
           <button class="dropbtn">Presidential Elections</button>
           <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a id="2016_pres">2016 Presidential</a>
+            <a id="2020_pres">2020 Presidential</a>
           </div>
         </div> 
         
         <div class="dropdown" id="about"><a href="./Subpages/about.html">About</a></li>
     </nav>
 
-    <p class="content">
-      
-    </p>
+    <div id="content">
+    </div>
 
   </body>
 </html>
