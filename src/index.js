@@ -2,6 +2,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 //import render_functions for all elections
 //-----congressional elections to render
+import render_about from './subpages_rendering/render_about'
 import render_2016_presidential from './subpages_rendering/render_2016_presidential'; 
 
 // If you want to start measuring performance in your app, pass a function
@@ -33,8 +34,15 @@ dropdowns.forEach(dropdown => {
   });
 });
 
+//calling function to render the about page
+const about = document.getElementById("about")
+about.addEventListener("click", (e) => {
+  //call the function to render the content section
+  render_about();
+})
+
 //adding onclick functions to all the elections represented by a unique id
-let  current_election = document.getElementById("2016_pres") //get the element
+let current_election = document.getElementById("2016_pres") //get the element
 //get the corresponding render function from the render js file for this particular election
 current_election.addEventListener("click", (e) => {
   //call the function to render the content section
