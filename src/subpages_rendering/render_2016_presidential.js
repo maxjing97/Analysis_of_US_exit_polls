@@ -22,7 +22,7 @@ class Main extends React.Component {
 };
 
 
-export default function render_2016_congressional() {
+export default function render_2016_presidential() {
     const root = ReactDOM.createRoot(document.getElementById('content'));
     const element = <Main/>;
     root.render(element);
