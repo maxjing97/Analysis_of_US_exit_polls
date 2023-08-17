@@ -24,8 +24,9 @@ class Main extends React.Component {
           <h1>About</h1>
           <p style={this.state.p_style}>
             This website compares the estimations of exit polls from CNN to the actual results of elections
-            on the for the presidency and House of Representative in the United States. Analysis is available for the results of the 
-            entire country and the results of selected "key states" such as Michigan and Pennsylvania. 
+            for the presidency and House of Representatives in the United States. Analysis is available for the results of the 
+            entire country and the results of selected "key states" such as Michigan and Pennsylvania for the federal elections from
+            2016-2022 that occur ever two years. 
             Overall, the exit polls are fairly accurate in their predictions. 
           </p>
         </div>
