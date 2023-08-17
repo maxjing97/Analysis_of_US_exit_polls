@@ -16,7 +16,7 @@ class Main extends React.Component {
     
     render() {
       return (
-        <h1>2016 congressional election results compared to predicted results based on the exit polls</h1>
+        <h2>2016 congressional election results compared to predicted results based on the exit polls</h2>
       )
     };
 };
