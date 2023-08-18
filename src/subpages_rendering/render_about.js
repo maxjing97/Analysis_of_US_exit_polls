@@ -1,5 +1,4 @@
 import React from 'react';
-import StrictMode from "react";
 import ReactDOM from 'react-dom/client';
 
 //render results and data analysis of the 2016 congressional election, connecting its own specialized js file that renders 
