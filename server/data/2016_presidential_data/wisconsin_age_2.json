@@ -1,0 +1,26 @@
+[
+    {
+        "sample percentage and category": "18-44: 39%",
+        "% for Clinton": "52.0",
+        "% for Trump": "40.0",
+        "% for johnson": "6.0",
+        "% for stein": "2.0",
+        "% for other/no answer": "0.0"
+    },
+    {
+        "sample percentage and category": "45 and older: 61%",
+        "% for Clinton": "43.0",
+        "% for Trump": "54.0",
+        "% for johnson": "2.0",
+        "% for stein": "1.0",
+        "% for other/no answer": "0.0"
+    },
+    {
+        "sample percentage and category": "predicted % total vote share",
+        "% for Clinton": "46.510000000000005",
+        "% for Trump": "48.54",
+        "% for johnson": "3.5599999999999996",
+        "% for stein": "1.3900000000000001",
+        "% for other/no answer": "0.0"
+    }
+]

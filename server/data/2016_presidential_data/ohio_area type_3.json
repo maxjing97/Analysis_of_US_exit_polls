@@ -1,0 +1,26 @@
+[
+    {
+        "sample percentage and category": "urban area: 31%",
+        "% for Clinton": "58.0",
+        "% for Trump": "38.0",
+        "% for other/no answer": "4.0"
+    },
+    {
+        "sample percentage and category": "suburban area: 59%",
+        "% for Clinton": "37.0",
+        "% for Trump": "57.0",
+        "% for other/no answer": "6.0"
+    },
+    {
+        "sample percentage and category": "rural area: 9%",
+        "% for Clinton": "27.0",
+        "% for Trump": "69.0",
+        "% for other/no answer": "4.0"
+    },
+    {
+        "sample percentage and category": "predicted % total vote share",
+        "% for Clinton": "42.24",
+        "% for Trump": "51.62",
+        "% for other/no answer": "5.140000000000001"
+    }
+]

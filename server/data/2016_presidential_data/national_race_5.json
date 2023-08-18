@@ -1,0 +1,38 @@
+[
+    {
+        "sample percentage and category": "white: 71%",
+        "% for Clinton": "37.0",
+        "% for Trump": "57.0",
+        "% for other/no answer": "6.0"
+    },
+    {
+        "sample percentage and category": "black: 12%",
+        "% for Clinton": "89.0",
+        "% for Trump": "8.0",
+        "% for other/no answer": "3.0"
+    },
+    {
+        "sample percentage and category": "latino: 11%",
+        "% for Clinton": "66.0",
+        "% for Trump": "28.0",
+        "% for other/no answer": "6.0"
+    },
+    {
+        "sample percentage and category": "asian: 4%",
+        "% for Clinton": "65.0",
+        "% for Trump": "27.0",
+        "% for other/no answer": "8.0"
+    },
+    {
+        "sample percentage and category": "other race: 3%",
+        "% for Clinton": "56.0",
+        "% for Trump": "36.0",
+        "% for other/no answer": "8.0"
+    },
+    {
+        "sample percentage and category": "predicted % total vote share",
+        "% for Clinton": "48.49",
+        "% for Trump": "46.669999999999995",
+        "% for other/no answer": "5.840000000000001"
+    }
+]

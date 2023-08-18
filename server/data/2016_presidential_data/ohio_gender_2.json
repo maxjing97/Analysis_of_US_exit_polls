@@ -1,0 +1,20 @@
+[
+    {
+        "sample percentage and category": "male: 47%",
+        "% for Clinton": "36.0",
+        "% for Trump": "59.0",
+        "% for other/no answer": "5.0"
+    },
+    {
+        "sample percentage and category": "female: 53%",
+        "% for Clinton": "49.0",
+        "% for Trump": "46.0",
+        "% for other/no answer": "5.0"
+    },
+    {
+        "sample percentage and category": "predicted % total vote share",
+        "% for Clinton": "42.89",
+        "% for Trump": "52.11",
+        "% for other/no answer": "5.0"
+    }
+]
