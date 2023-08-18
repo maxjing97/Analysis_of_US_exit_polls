@@ -49,9 +49,8 @@ class MainStarting extends React.Component {
 
 //test calling the backend
 async function getData() {
-  const response = await fetch('/express_backend');
+  const response = await fetch('http://localhost:4000/users');
   const body = await response.json();
-
   if (response.status !== 200) {
     throw Error(body.message) 
   }
@@ -63,10 +62,8 @@ function ShowData(props) {
   if(props.election !== "None") { //if the option selected is none
   const lower_case_name = String(props.election).toLowerCase(); //find the lower case name of election area, used to find the correct data to display
   
-  //testing the server
-  this.getData()
-    .then(res => this.setState({ data: res.express }))
-    .catch(err => console.log(err));
+    let data = getData()
+    console.log(getData())
 
     // fetching the GET route from the Express server which matches the GET route from server.js
 
@@ -74,6 +71,7 @@ function ShowData(props) {
   return (
     <div class = "election-data">
       <h2>{props.election} election results and exit polls</h2>
+      <p>{data}</p>
       <section id="table-summary"></section>
     </div>
   );
