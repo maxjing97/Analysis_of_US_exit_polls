@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import set_post_data from "./../client";
+import get_election_tables from "./../data_format";
 
 //render results and data analysis of the 2016 congressional election, connecting its own specialized js file that renders 
 // text and data visualizations using the corresponding webscraped data
@@ -62,13 +63,10 @@ class ShowData extends React.Component {
 
   componentDidMount() {
     //trigger the callback to get the data after the component mounted
-
-    set_post_data("data/2016_presidential_data/michigan_actual.json").then(
-      response => {
-        this.setState({
-          text: JSON.stringify(response)
-        }) //change the current text of the recently rendered div
-    })
+    console.log("mounting:", get_election_tables("2016_presidential","national"))
+    this.setState({
+      text: get_election_tables("2016_presidential","national") //calls function to load the relevant tables in html format for this data
+    }) 
   }
 
 

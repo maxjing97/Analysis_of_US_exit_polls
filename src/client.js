@@ -13,7 +13,6 @@ export default async function set_post_data(data_path) {
     try {
         const fetchResponse = await fetch(url, settings);
         const data = await fetchResponse.json();
-        console.log("data returned", data);
         return data;
     } catch (e) {
         return e;
