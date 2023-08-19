@@ -15,7 +15,6 @@ router.get("/user", (req, res) => {
 // set the local data_name variable to be something
 router.post("/set", (req, res) => {
     const path = "./../" +  req.body.data_path
-    console.log("path", path)
     try {
         const json_file = require(path);
         res.json(json_file);
