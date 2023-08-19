@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
+import set_post_data from "./../client";
 
 //render results and data analysis of the 2016 congressional election, connecting its own specialized js file that renders 
 // text and data visualizations using the corresponding webscraped data
@@ -47,34 +48,40 @@ class MainStarting extends React.Component {
   };
 };
 
-//test calling the backend
-async function getData() {
-  const response = await fetch('http://localhost:4000/users');
-  const body = await response.json();
-  if (response.status !== 200) {
-    throw Error(body.message) 
+
+//react class to show the data for the election selected
+class ShowData extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text:""
+    };
+    //binding since select_option() sets state
+    this.componentDidMount = this.componentDidMount.bind(this);
   }
-  return body;
-};
 
-//react function to show the data for the election selected
-function ShowData(props) {
-  if(props.election !== "None") { //if the option selected is none
-  const lower_case_name = String(props.election).toLowerCase(); //find the lower case name of election area, used to find the correct data to display
-  
-    let data = getData()
-    console.log(getData())
+  componentDidMount() {
+    //trigger the callback to get the data after the component mounted
 
-    // fetching the GET route from the Express server which matches the GET route from server.js
+    set_post_data("data/2016_presidential_data/michigan_actual.json").then(
+      response => {
+        this.setState({
+          text: JSON.stringify(response)
+        }) //change the current text of the recently rendered div
+    })
+  }
 
-  
-  return (
-    <div class = "election-data">
-      <h2>{props.election} election results and exit polls</h2>
-      <p>{data}</p>
-      <section id="table-summary"></section>
-    </div>
-  );
+
+  render() {
+    if(this.props.election !== "None") { //if the option selected not none
+      return (
+        <div className = "election-data">
+          <h2>{this.props.election} election results and exit polls</h2>
+          
+          <div id="table-summary" ref= {this.table_area_ref}>{this.state.text}</div>
+        </div>
+      );
+    }
   }
 }
 
