@@ -55,7 +55,7 @@ class ShowData extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text:""
+      text:"<div></div>"
     };
     //binding since select_option() sets state
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -63,10 +63,12 @@ class ShowData extends React.Component {
 
   componentDidMount() {
     //trigger the callback to get the data after the component mounted
-    console.log("mounting:", get_election_tables("2016_presidential","national"))
-    this.setState({
-      text: get_election_tables("2016_presidential","national") //calls function to load the relevant tables in html format for this data
-    }) 
+    get_election_tables("2016_presidential","national").then(table_text => {
+      this.setState({
+        text: table_text //calls function to load the relevant tables in html format for this data
+      }) 
+    })
+
   }
 
 
@@ -76,7 +78,7 @@ class ShowData extends React.Component {
         <div className = "election-data">
           <h2>{this.props.election} election results and exit polls</h2>
           
-          <div id="table-summary" ref= {this.table_area_ref}>{this.state.text}</div>
+          <div id="table-summary" dangerouslySetInnerHTML={{__html: this.state.text}}></div> 
         </div>
       );
     }
