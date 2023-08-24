@@ -12,35 +12,34 @@ export default async function get_election_tables(election_name, area) {
     let category = categories[0]
     let url = `data/${election_name}_data/${area}_${category}`
     let data = await set_post_data(url)
-    let current_string = `<p>${JSON.stringify(data)}</p>`
+    let current_string = json_list_to_html_table(JSON.stringify(data))
     return_string += current_string
 
     //loop through the categories and call the get function for each one to request from the server, calling the function to get the html for each
     category = categories[1]
     url = `data/${election_name}_data/${area}_${category}`
     data = await set_post_data(url)
-    current_string = `<p>${JSON.stringify(data)}</p>`
+    current_string = json_list_to_html_table(JSON.stringify(data))
     return_string += current_string
 
     category = categories[2]
     url = `data/${election_name}_data/${area}_${category}`
     data = await set_post_data(url)
-    current_string = `<p>${JSON.stringify(data)}</p>`
+    current_string = json_list_to_html_table(JSON.stringify(data))
     return_string += current_string
     
     category = categories[3]
     url = `data/${election_name}_data/${area}_${category}`
     data = await set_post_data(url)
-    current_string = `<p>${JSON.stringify(data)}</p>`
+    current_string = json_list_to_html_table(JSON.stringify(data))
     return_string += current_string
 
     category = categories[4]
     url = `data/${election_name}_data/${area}_${category}`
     data = await set_post_data(url)
-    current_string = `<p>${JSON.stringify(data)}</p>`
+    current_string = json_list_to_html_table(JSON.stringify(data))
     return_string += current_string
 
-    console.log("current output", return_string)
     return return_string
 }
 
@@ -49,5 +48,55 @@ export default async function get_election_tables(election_name, area) {
 
 //this program converts a json list to html
 function json_list_to_html_table(input) {
+    //parse the json
+    input = JSON.parse(input)
 
-}
+    // Create the table element
+    let table = "<table class=\"data_preview_table\">\n";
+            
+    // Get the keys (column names) of the first object in the JSON data
+    let cols;
+    try {
+        cols = Object.keys(input[0]);
+    } catch(e) {
+        return "" //return empty if exception
+    }
+    
+    
+    // Create the header elements
+    let thead = "<thead>\n";
+    let tr = "<tr>\n";
+
+    // Loop through the column names and create header cells
+    for(let i = 0; i < cols.length; i++) {
+        const item = cols[i];
+        let th = `<th>${item}</th>\n`;
+        tr+=th; // Append the header cell to the header row
+    }
+    //append closing tags
+    tr+="</tr>\n"
+    thead+=tr;
+    thead+="</thead>\n"; // Append the header row to the header
+    table+=thead // Append the header to the table
+
+    
+    //create the table body 
+    let body = "<tbody>\n"
+    for(let i = 0; i < input.length; i++) {
+        let tr = "<tr>";
+        for(let key in input[i]) {
+            const value = input[i][key];
+            let td = `<td>${value}</td>\n`;
+            tr+=td
+        }
+        tr+="</tr>\n"
+        //append this row to body
+        body+=tr
+    }
+
+    //append the closing tags
+    body+="</tbody>\n"
+    table+=body 
+    table+="</table>\n"
+    return table
+}   

@@ -21,6 +21,7 @@ class MainStarting extends React.Component {
   select_option(event){
     //saves the election name selected
     const curr_election_selected = event.target.value;
+    console.log("election selected", curr_election_selected)
     this.setState({
       election_selected: curr_election_selected
     });
@@ -58,12 +59,13 @@ class ShowData extends React.Component {
       text:"<div></div>"
     };
     //binding since select_option() sets state
-    this.componentDidMount = this.componentDidMount.bind(this);
+    this.updatetext = this.updatetext.bind(this);
   }
 
-  componentDidMount() {
+  updatetext() {
     //trigger the callback to get the data after the component mounted
-    get_election_tables("2016_presidential","national").then(table_text => {
+    const election_name = String(this.props.election).toLowerCase() //get this from the prop, and make this lowercase
+    get_election_tables("2016_presidential", election_name).then(table_text => {
       this.setState({
         text: table_text //calls function to load the relevant tables in html format for this data
       }) 
@@ -73,7 +75,9 @@ class ShowData extends React.Component {
 
 
   render() {
+    
     if(this.props.election !== "None") { //if the option selected not none
+      this.updatetext()
       return (
         <div className = "election-data">
           <h2>{this.props.election} election results and exit polls</h2>

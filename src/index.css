@@ -94,3 +94,8 @@ button.dropbtn {
   display: flex;
   justify-content: center;
 }
+
+/*preview table style*/
+table, th, td {
+  border: 1px solid black;
+} 
