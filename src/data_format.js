@@ -5,39 +5,39 @@ import set_post_data from "./client";
 export default async function get_election_tables(election_name, area) {
     let return_string = ""
     //get all the elections that match these names and categories and save them in table format
-    const categories = ["age_6","area type", "gender_2","race_5","actual"] 
+    const categories = ["age_6","area type_3", "gender_2","race_5","actual"] 
     //for each of these categories, find the path
 
     //loop through the categories and call the get function for each one to request from the server, calling the function to get the html for each
     let category = categories[0]
     let url = `data/${election_name}_data/${area}_${category}`
     let data = await set_post_data(url)
-    let current_string = json_list_to_html_table(JSON.stringify(data))
+    let current_string = json_list_to_html_table(JSON.stringify(data), "Votes by age group")
     return_string += current_string
 
     //loop through the categories and call the get function for each one to request from the server, calling the function to get the html for each
     category = categories[1]
     url = `data/${election_name}_data/${area}_${category}`
     data = await set_post_data(url)
-    current_string = json_list_to_html_table(JSON.stringify(data))
+    current_string = json_list_to_html_table(JSON.stringify(data), "Votes by area type")
     return_string += current_string
 
     category = categories[2]
     url = `data/${election_name}_data/${area}_${category}`
     data = await set_post_data(url)
-    current_string = json_list_to_html_table(JSON.stringify(data))
+    current_string = json_list_to_html_table(JSON.stringify(data), "Votes by gender")
     return_string += current_string
     
     category = categories[3]
     url = `data/${election_name}_data/${area}_${category}`
     data = await set_post_data(url)
-    current_string = json_list_to_html_table(JSON.stringify(data))
+    current_string = json_list_to_html_table(JSON.stringify(data), "Votes by racial group")
     return_string += current_string
 
     category = categories[4]
     url = `data/${election_name}_data/${area}_${category}`
     data = await set_post_data(url)
-    current_string = json_list_to_html_table(JSON.stringify(data))
+    current_string = json_list_to_html_table(JSON.stringify(data), "Actual election results")
     return_string += current_string
 
     return return_string
@@ -46,10 +46,14 @@ export default async function get_election_tables(election_name, area) {
 
 
 
-//this program converts a json list to html
-function json_list_to_html_table(input) {
+//this program converts a json list to html, given input json and the table title
+function json_list_to_html_table(input, title) {
     //parse the json
     input = JSON.parse(input)
+    let return_string = "";
+    //create the div for the title 
+    const div_text= `<div class="table_title">${title}</div>`; //class is table title 
+    return_string += div_text //appending to the return string
 
     // Create the table element
     let table = "<table class=\"data_preview_table\">\n";
@@ -95,8 +99,10 @@ function json_list_to_html_table(input) {
     }
 
     //append the closing tags
-    body+="</tbody>\n"
-    table+=body 
-    table+="</table>\n"
-    return table
+    body+="</tbody>\n";
+    table+=body;
+    table+="</table>\n";
+
+    return_string += table; //appending entire table to the return string  
+    return return_string
 }   

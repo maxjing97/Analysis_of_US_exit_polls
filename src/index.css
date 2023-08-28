@@ -98,4 +98,28 @@ button.dropbtn {
 /*preview table style*/
 table, th, td {
   border: 1px solid black;
+  border-collapse: collapse;
+  width: 50%;
+  table-layout: fixed;
+  word-wrap: break-word;
+  margin: 0 auto;
 } 
+
+
+
+th {
+  border: 1px solid white;
+  background-color: black;
+  color: #ffffff;
+}
+
+td {
+  margin: 0 0;
+}
+
+.table_title {
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 16px;
+}
